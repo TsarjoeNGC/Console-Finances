@@ -91,12 +91,12 @@ function getValue(array){
     let values=[];
     for (let i = 0; i < array.length; i++) {
         let element = array[i];
-         values +=`[${element[1]}]`+ ',';
+         values +=element[1]+ ',';
+         
        
 
         
     }
-    console.log(values[85]);
 
 
     return values ;
@@ -104,16 +104,25 @@ function getValue(array){
 
 
 }
+const getPositive=(arr)=>{
+    arr
+
+}
  var total=getValue(finances);
  console.log(total);
-
-var rony= [1,7,5,];
+document.write(total)
+var rony= [1,7,-5];
 function findAverage (array){
-    let average=0;
+    let average=[];
 
     for (let index = 0; index < array.length; index++) {
         let element = array[index];
-        average += element;
+        if(element<0){
+          element =0;
+        } else{
+            average += element;
+
+        }
 
         
     }
@@ -121,5 +130,5 @@ function findAverage (array){
 return average;
 
 }
-const resylt = findAverage(total);
+const resylt = findAverage(rony);
 console.log(resylt);
