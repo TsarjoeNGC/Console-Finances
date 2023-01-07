@@ -86,49 +86,92 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+            // Getting all values
+            
+let values=[];
+let datas=[]
+finances.filter((item=> datas.push(item)));
+finances.filter((item=> values.push(item[1])));
+//  console.log(values.length);
 
-function getValue(array){
-    let values=[];
-    for (let i = 0; i < array.length; i++) {
-        let element = array[i];
-         values +=element[1]+ ',';
-         
-       
-
-        
-    }
-
-
-    return values ;
-             console.log(values.length);
+//  Number of Months
+ const totallMonths=finances.length;
 
 
-}
-const getPositive=(arr)=>{
-    arr
+        //  Total Lose/Profit
 
-}
- var total=getValue(finances);
- console.log(total);
-document.write(total)
-var rony= [1,7,-5];
-function findAverage (array){
-    let average=[];
+ const totalProfit=values.filter(item => item >0).reduce((a,b)=> a+b);
 
-    for (let index = 0; index < array.length; index++) {
-        let element = array[index];
-        if(element<0){
-          element =0;
-        } else{
-            average += element;
+ const  totalLose=values.filter(item => item <0).reduce((a,b)=> a+b);
+  
+ const  total=totalProfit+totalLose;
+//  console.log(total);
 
-        }
+        //  Average Change
+ const averageChanges=total/totallMonths;
+//  console.log(averageChanges);
 
-        
-    }
-    average = average/ array.length;
-return average;
+// Greatest Increase in Profits
+let maxvalue=[0];
+for (let i = 0; i < values.length; i++) {
+   const element = values[i];
+   if(element > maxvalue){
+       maxvalue=element;
+   }
+   
+};
+let greatestIncresProfits=[0];
+for (let i = 0; i < datas.length; i++) {
+   const element = datas[i];
+   if(element[1]===1170593){
+       greatestIncresProfits=element;
 
-}
-const resylt = findAverage(rony);
-console.log(resylt);
+   }
+   
+};
+// console.log(maxvalue);
+// console.log(greatestIncresProfits);
+
+
+        // Greatest decrease in Profits
+let minvalue=[0];
+for (let i = 0; i < values.length; i++) {
+   const element = values[i];
+   if(element < minvalue){
+       minvalue=element;
+   }
+   
+};
+let greatestDecresProfits=[0];
+for (let i = 0; i < datas.length; i++) {
+   const element = datas[i];
+   if(element[1]===-1196225){
+       greatestDecresProfits=element;
+
+   }
+   
+};
+// console.log(minvalue);
+// console.log(greatestDecresProfits);
+
+console.log(`
+Financial Analysis
+----------------------------
+Total Months:${totallMonths}
+Total: $${total}
+Average  Change: $${averageChanges}
+Greatest Increase in Profits: ${greatestIncresProfits}
+Greatest Decrease in Profits: ${greatestDecresProfits}
+`);
+var result=
+
+document.write(`
+Financial Analysis
+----------------------------
+Total Months:${totallMonths},
+Total: $${total},
+Average  Change: $${averageChanges},
+Greatest Increase in Profits: ${greatestIncresProfits},
+Greatest Decrease in Profits: ${greatestDecresProfits}
+`);
+

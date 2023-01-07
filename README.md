@@ -1,6 +1,10 @@
 # Console-Finances
 JS code for analysing company financial records
 
+# Deployed site
+
+https://tsarjoengc.github.io/Console-Finances/
+
 # Console Finances
 
 In this challenge, I 've  used the concepts I 've learned to complete the required activity. This activity presents a real-world situation in which I newfound JavaScript skills will come in handy. I was  tasked with creating code for analyzing the financial records of a company. 
@@ -40,3 +44,17 @@ To deploy this project run
 
 
 ## Environment Variables
+To run this project, you will need to add the following environment variables to your file
+
+`index.html`
+
+`Console.log`
+
+
+## Lessons Learned
+
+* You will need to do some research on your own for this project!
+
+* Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
+
+* How do you only print to the nearest 100th in JavaScript?
